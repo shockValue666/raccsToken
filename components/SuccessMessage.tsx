@@ -20,7 +20,7 @@ const SuccessMessage = () => {
 
   return (
     <div className='flex flex-col justify-center items-center'>
-      <div className="text-xl font-bold mb-2 mt-6">Congratulations! You are eligible</div>
+      <div className="text-xl font-bold mb-2 mt-6">Congratulations! You are eligible!</div>
       <button className="btn bg-[#A80038] mt-4" onClick={handleTwitterShare}>Share on Twitter</button>
     </div>
   );
