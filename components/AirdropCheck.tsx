@@ -25,8 +25,8 @@ const AirdropCheck = () => {
             setSeeSubmitButton(false)
           }else{
             setAddressIsEligible("no")
-            console.log("YOU AREN'T ELIGIBLE")
-            showNotification("YOU AREN'T ELIGIBLE", "error");
+            console.log("YOU ARE NOT ELIGIBLE")
+            showNotification("YOU ARE NOT ELIGIBLE", "error");
           }
         }
     }
