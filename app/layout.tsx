@@ -17,10 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        {/* Add your favicon here */}
-        <link rel="icon" href="/images/favicon.ico" />
-      </Head>
+      {/* <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head> */}
+      {/* <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head> */}
       <body className={inter.className}>{children}</body>
     </html>
   )
