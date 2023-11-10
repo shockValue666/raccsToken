@@ -34,7 +34,7 @@ const AirdropCheck = () => {
     return (
       <div className="flex flex-col items-center my-8">
         <h2 className="text-2xl font-bold text-reddish mb-2 px-4 md:px-0">Check Your $RACCS Airdrop Eligibility</h2>
-        <p className="mb-4 text-sm text-gray-600">Enter your address to see if you're eligible for the airdrop.</p>
+        <p className="mb-4 text-sm text-gray-600">Enter your address to see if you are eligible for the airdrop.</p>
         <input
           type="text"
           placeholder="Your Address"
