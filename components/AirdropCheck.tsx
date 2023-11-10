@@ -41,7 +41,7 @@ const AirdropCheck = () => {
           className="input input-bordered border-[#A80038] input-secondary w-full max-w-xs md:max-w-xl"
           onChange={e=>setAddress(e.target.value)}
         />
-        <button className={`btn bg-[#A80038] my-8 ${seeSubmitButton ? 'block' : 'hidden'}`} onClick={handleClick}>Check Eligibility</button>
+        <button className={`btn bg-[#A80038] my-8 ${seeSubmitButton ? "block" : "hidden"}`} onClick={handleClick}>Check Eligibility</button>
         
         {
           addressIsEligible == "yes" && (<><SuccessMessage/></>)
