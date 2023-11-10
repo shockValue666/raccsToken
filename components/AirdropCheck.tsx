@@ -26,7 +26,7 @@ const AirdropCheck = () => {
           }else{
             setAddressIsEligible("no")
             console.log("YOU AREN'T ELIGIBLE")
-            showNotification("YOU AREN\'T ELIGIBLE', 'error");
+            showNotification("YOU AREN'T ELIGIBLE", "error");
           }
         }
     }
