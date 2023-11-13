@@ -18,7 +18,8 @@ const AirdropCheck = () => {
         console.log("eimai aftos pou eimai")
         console.log("address: ",address)
         if(address!==null){
-          const isEligible = eligibleAddresses.includes(address)
+          const trimmedAddress = address.trim();
+          const isEligible = eligibleAddresses.includes(trimmedAddress)
           if(isEligible){
             setAddressIsEligible("yes");
             console.log("YOU ARE ELIGIBLE")

@@ -30,12 +30,12 @@ const Navbar = () => {
             </div>
             </button> */}
             <div className='flex p-2'>
-                <a href="https://twitter.com/yourTwitter" target="_blank" className="text-white mr-4">
+                <a href="https://twitter.com/RaccsonSol" target="_blank" className="text-white mr-4">
                     <FaXTwitter size={30} />
                 </a>
-                <a href="https://discord.com/yourDiscord" target="_blank" className="text-white">
+                {/* <a href="https://discord.com/yourDiscord" target="_blank" className="text-white">
                     <BsDiscord size={30} />
-                </a>
+                </a> */}
             </div>
         </div>
     </div>
