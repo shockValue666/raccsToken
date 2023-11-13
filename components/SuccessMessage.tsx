@@ -3,6 +3,7 @@
 import Confetti from 'react-dom-confetti';
 
 import React, { useEffect, useState } from 'react'
+import {FaXTwitter} from 'react-icons/fa6'
 
 const SuccessMessage = () => {
   const [confettiActive, setConfettiActive] = useState(false);
@@ -51,7 +52,7 @@ const SuccessMessage = () => {
     <div className='flex flex-col justify-center items-center'>
       <Confetti active={confettiActive} config={config} />
       <div className="text-xl font-bold mb-2 mt-6">Congratulations! You are eligible!</div>
-      <button className="btn bg-[#A80038] mt-4" onClick={handleTwitterShare}>Share on Twitter</button>
+      <button className="btn bg-[#A80038] mt-4" onClick={handleTwitterShare}>Share on Twitter <FaXTwitter size={20} /></button>
     </div>
   );
 };

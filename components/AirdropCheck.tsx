@@ -12,10 +12,13 @@ const AirdropCheck = () => {
   const [address,setAddress] = useState<string|null>(null)
   const [addressIsEligible,setAddressIsEligible] = useState<string | null>(null)
   const [seeSubmitButton,setSeeSubmitButton] = useState(true)
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const { showNotification } = useNotification();
 
 
     const handleClick = async () =>{
+      setIsLoading(true)
         console.log("eimai aftos pou eimai")
         console.log("address: ",address)
         if(address!==null){
@@ -51,6 +54,7 @@ const AirdropCheck = () => {
             showNotification("YOU ARE NOT ELIGIBLE", "error");
           }
         }
+        setIsLoading(false);
     }
 
     return (
@@ -62,11 +66,30 @@ const AirdropCheck = () => {
           placeholder="Your Address"
           className="input input-bordered border-[#A80038] input-secondary w-full max-w-xs md:max-w-xl"
           onChange={e=>setAddress(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              handleClick();
+            }
+          }}
+          disabled={addressIsEligible === "yes"}
         />
-        <button className={`btn bg-[#A80038] my-8 ${seeSubmitButton ? "block" : "hidden"}`} onClick={handleClick}>Check Eligibility</button>
-        
+
         {
-          addressIsEligible == "yes" && (<><SuccessMessage/></>)
+          isLoading ? 
+          (
+            <div className='py-8'>
+              <span className="loading loading-spinner text-error"></span>
+            </div>
+          )
+          :
+          (<>
+            <button className={`btn bg-[#A80038] my-8 ${seeSubmitButton ? "block" : "hidden"}`} onClick={handleClick}>Check Eligibility</button>
+          </>)
+        }
+        {
+          addressIsEligible == "yes" && (<>
+            <SuccessMessage/>
+          </>)
         }
         {
           addressIsEligible == "no" && (<ErrorMessage message='poutsa'/>)
