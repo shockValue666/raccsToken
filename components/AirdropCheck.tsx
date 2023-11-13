@@ -4,6 +4,7 @@ import eligibleAddresses from '../eligibleAddresses.json';
 import ErrorMessage from './ErrorMessage';
 import { useNotification } from '../contexts/NotificationContext';
 import SuccessMessage from './SuccessMessage';
+import { supabase } from '@/clients/supabaseclient';
 
 
 const AirdropCheck = () => {
@@ -14,12 +15,32 @@ const AirdropCheck = () => {
   const { showNotification } = useNotification();
 
 
-    const handleClick = () =>{
+    const handleClick = async () =>{
         console.log("eimai aftos pou eimai")
         console.log("address: ",address)
         if(address!==null){
           const trimmedAddress = address.trim();
-          const isEligible = eligibleAddresses.includes(trimmedAddress)
+
+          const { data, error } = await supabase
+            .from('addresses')
+            .select('*')
+            // .ilike('address', `%${trimmedAddress}%`);
+            .ilike('address', `%${trimmedAddress}%`);
+
+
+          // console.log("data: ",data," error: ",error)
+          let isEligible
+          if(data){
+            if(data[0]){
+              if(data[0].address == trimmedAddress){
+                isEligible=true
+                console.log("MATCH")
+              }
+            }
+          }else{
+            isEligible=false
+            console.log("not match")
+          }
           if(isEligible){
             setAddressIsEligible("yes");
             console.log("YOU ARE ELIGIBLE")
