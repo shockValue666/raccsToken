@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="flex justify-between items-center p-4 bg-black text-white">
       <div className='flex'>
-        <a href="https://twitter.com/yourTwitter" target="_blank" className="text-white mr-4">
+        <a href="https://twitter.com/RaccsonSol" target="_blank" className="text-white mr-4">
           <FaXTwitter size={30} />
         </a>
         {/* <a href="https://discord.com/yourDiscord" target="_blank" className="text-white">
