@@ -71,7 +71,7 @@ const AirdropCheck = () => {
               handleClick();
             }
           }}
-          disabled={addressIsEligible === "yes"}
+          disabled={addressIsEligible === "yes" || isLoading}
         />
 
         {
